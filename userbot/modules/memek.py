@@ -3,11 +3,11 @@ import asyncio
 from collections import deque
 from userbot.events import register
 
-@register(outgoing=True, pattern="^.mek")
+@register(outgoing=True, pattern="^.ketawa")
 async def _(event):
 	if event.fwd_from:
 		return
-	deq = deque(list("Assalamualaikum"))
+	deq = deque(list("wkwkwkwkwkwkwkkwk"))
 	for _ in range(50):
 		await asyncio.sleep(0.1)
 		await event.edit("".join(deq))
