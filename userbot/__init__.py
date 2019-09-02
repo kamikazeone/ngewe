@@ -135,6 +135,7 @@ else:
     bot = TelegramClient("userbot", API_KEY, API_HASH)
 
 # Global Variables
+HELPER = {}
 COUNT_MSG = 0
 USERS = {}
 COUNT_PM = {}
