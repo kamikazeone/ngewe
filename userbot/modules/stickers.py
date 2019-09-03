@@ -166,7 +166,7 @@ async def kang(args):
                             # Ensure user doesn't get spamming notifications
                             await bot.send_read_acknowledge(conv.chat_id)
                             await args.edit(
-                                f"Sticker added in a Different Pack! This Pack is Newly created! Your pack can be found [lihat disini](t.me/addstickers/{packname})",
+                                f"Sticker added in a Different Pack! This Pack is Newly created! Your pack can be found)",
                                 parse_mode='md')
                             return
                     if is_anim:
@@ -235,7 +235,7 @@ async def kang(args):
                     await bot.send_read_acknowledge(conv.chat_id)
 
             await args.edit(
-                f"Sticker Berhasil Dicury/Successfully stolen! [lihat disini](t.me/addstickers/{packname})",
+                f"Sticker Berhasil Dicury/Successfully stolen!/ステッカーを盗んだ",
                 parse_mode='md')
 
 
