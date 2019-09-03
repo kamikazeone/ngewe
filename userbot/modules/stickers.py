@@ -21,7 +21,7 @@ from telethon.tl.types import DocumentAttributeSticker
 KANGING_STR = [
     "Membuat Stiker.........",
     "Tercurry",
-    "Inviting this sticker over to my pack...",
+    "ステッカーを追加するよう招待する",
     "ストール",
     "素敵なステッカー!\n I stolen sticker",
     "Saya Curi Stickernya\nhehe.",
@@ -190,7 +190,7 @@ async def kang(args):
                     # Ensure user doesn't get spamming notifications
                     await bot.send_read_acknowledge(conv.chat_id)
             else:
-                await args.edit("Brewing a new Pack...")
+                await args.edit(".新しいステッカーを作成する/Membuat Sticker Baru")
                 async with bot.conversation('Stickers') as conv:
                     await conv.send_message(cmd)
                     await conv.get_response()
