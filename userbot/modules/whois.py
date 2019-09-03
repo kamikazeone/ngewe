@@ -27,7 +27,7 @@ async def who(event):
             return
 
         await event.edit(
-            "`Sit tight while I steal some data from Mark Zuckerburg...`")
+            "`Menunggu Data Profile Telegram Anda......`")
 
         if not os.path.isdir(TEMP_DOWNLOAD_DIRECTORY):
             os.makedirs(TEMP_DOWNLOAD_DIRECTORY)
@@ -131,7 +131,7 @@ async def fetch_info(replied_user, event):
     caption = "<b>Info Profile:</b>\n\n"
     caption += f"Nama Depan: {first_name}\n"
     caption += f"Username: {username}\n"
-    caption += f"Number of Profile Pics: {replied_user_profile_photos_count}\n"
+    caption += f"Jumlah Foto Profil: {replied_user_profile_photos_count}\n"
     caption += f"ID Telegram: <code>{user_id}</code>\n\n"
     caption += f"<a href=\"tg://user?id={user_id}\">{first_name}</a>"
 
