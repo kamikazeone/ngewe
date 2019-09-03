@@ -27,7 +27,7 @@ async def who(event):
             return
 
         await event.edit(
-            "`Sit tight while I steal some data from Mark Zuckerburg...`")
+            "`Lagi Loading Asu..............`")
 
         if not os.path.isdir(TEMP_DOWNLOAD_DIRECTORY):
             os.makedirs(TEMP_DOWNLOAD_DIRECTORY)
@@ -113,7 +113,6 @@ async def fetch_info(replied_user, event):
     except Exception as e:
         dc_id = "Couldn't fetch DC ID!"
         location = str(e)
-    common_chat = replied_user.common_chats_count
     username = replied_user.user.username
     user_bio = replied_user.about
     is_bot = replied_user.user.bot
@@ -142,7 +141,6 @@ async def fetch_info(replied_user, event):
     caption += f"Is Verified by Telegram: {verified}\n"
     caption += f"ID: <code>{user_id}</code>\n\n"
     caption += f"Bio: \n<code>{user_bio}</code>\n\n"
-    caption += f"Common Chats with this user: {common_chat}\n"
     caption += f"Permanent Link To Profile: "
     caption += f"<a href=\"tg://user?id={user_id}\">{first_name}</a>"
 
