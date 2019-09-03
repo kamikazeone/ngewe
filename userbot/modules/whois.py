@@ -27,7 +27,7 @@ async def who(event):
             return
 
         await event.edit(
-            "`Lagi Loading Asu..............`")
+            "`Sit tight while I steal some data from Mark Zuckerburg...`")
 
         if not os.path.isdir(TEMP_DOWNLOAD_DIRECTORY):
             os.makedirs(TEMP_DOWNLOAD_DIRECTORY)
@@ -107,12 +107,16 @@ async def fetch_info(replied_user, event):
         pass
     user_id = replied_user.user.id
     first_name = replied_user.user.first_name
+    last_name = replied_user.user.last_name
     try:
         dc_id, location = get_input_location(replied_user.profile_photo)
     except Exception as e:
         dc_id = "Couldn't fetch DC ID!"
         location = str(e)
+    common_chat = replied_user.common_chats_count
     username = replied_user.user.username
+    user_bio = replied_user.about
+    restricted = replied_user.user.restricted
     photo = await event.client.download_profile_photo(user_id,
                                                       TEMP_DOWNLOAD_DIRECTORY +
                                                       str(user_id) + ".jpg",
@@ -123,14 +127,12 @@ async def fetch_info(replied_user, event):
         "\u2060", "") if last_name else ("This User has no Last Name")
     username = "@{}".format(username) if username else (
         "This User has no Username")
-    user_bio = "This User has no About" if not user_bio else user_bio
 
-    caption = "<b>USER INFO:</b>\n\n"
+    caption = "<b>Info Profile:</b>\n\n"
     caption += f"Nama Depan: {first_name}\n"
     caption += f"Username: {username}\n"
-    caption += f"Data Centre ID: {dc_id}\n"
+    caption += f"Number of Profile Pics: {replied_user_profile_photos_count}\n"
     caption += f"ID Telegram: <code>{user_id}</code>\n\n"
-    caption += f"Lihat Lebih dalam: "
     caption += f"<a href=\"tg://user?id={user_id}\">{first_name}</a>"
 
     return photo, caption
