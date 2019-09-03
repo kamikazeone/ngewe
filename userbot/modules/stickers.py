@@ -235,7 +235,7 @@ async def kang(args):
                     await bot.send_read_acknowledge(conv.chat_id)
 
             await args.edit(
-                f"Sticker Berhasil Dicury/Successfully stolen!/ステッカーを盗んだ [Klik disini](t.me/addstickers/{packname})",
+                f"Sticker Berhasil Dicury/ステッカーを盗んだ",
                 parse_mode='md')
 
 
