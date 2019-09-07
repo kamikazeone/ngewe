@@ -57,7 +57,7 @@ async def mention_afk(mention):
             if mention.sender_id not in USERS:
                 if AFKREASON:
                     await mention.reply(
-                        f"Sorry! I am AFK because of `{AFKREASON}`. I'll have a look at this as soon as I come back."
+                        f"Maaf Lagi main Mobile Legend `{AFKREASON}`Nanti Saya kembali"
                     )
                 else:
                     await mention.reply(str(random.choice(AFKSTR)))
@@ -148,7 +148,7 @@ async def type_afk_is_not_true(notafk):
     global AFKREASON
     if ISAFK:
         ISAFK = False
-        await notafk.respond("I'm no longer AFK.")
+        await notafk.respond("Saya Kembali おかえり")
         sleep(2)
         if BOTLOG:
             await notafk.client.send_message(
