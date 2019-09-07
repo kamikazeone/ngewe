@@ -18,7 +18,7 @@ from userbot.events import register, errors_handler
 
 # ========================= CONSTANTS ============================
 AFKSTR = [
-    "I'm busy right now. Please talk in a bag and when I come back you can just give me the bag!",
+    "Saya lagi Main Mobile legend",
     "I'm away right now. If you need anything, leave a message after the beep:\n`beeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeep`!",
     "You missed me, next time aim better.",
     "I'll be back in a few minutes and if I'm not...,\nwait longer.",
@@ -67,7 +67,7 @@ async def mention_afk(mention):
                 if USERS[mention.sender_id] % 2 == 0:
                     if AFKREASON:
                         await mention.reply(
-                            f"Sorry! But I'm still not back yet. Currently busy with `{AFKREASON}`."
+                            f"Saya Lagi Main `{AFKREASON}`."
                         )
                     else:
                         await mention.reply(str(random.choice(AFKSTR)))
@@ -99,7 +99,7 @@ async def afk_on_pm(sender):
             if sender.sender_id not in USERS:
                 if AFKREASON:
                     await sender.reply(
-                        f"Sorry! I am AFK due to `{AFKREASON}`. I'll respond as soon I come back."
+                        f"Saya Lagi main Game `{AFKREASON}` Asukk"
                     )
                 else:
                     await sender.reply(str(random.choice(AFKSTR)))
@@ -109,7 +109,7 @@ async def afk_on_pm(sender):
                 if USERS[sender.sender_id] % 2 == 0:
                     if AFKREASON:
                         await sender.reply(
-                            f"Sorry! But I'm still not back yet. Currently busy with `{AFKREASON}`."
+                            f"Sorry Saya jomblo`{AFKREASON}`."
                         )
                     else:
                         await sender.reply(str(random.choice(AFKSTR)))
