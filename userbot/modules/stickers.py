@@ -24,15 +24,15 @@ KANGING_STR = [
     "ステッカーを追加するよう招待する",
     "ストール",
     "素敵なステッカー!\n I stolen sticker",
-    "Saya Curi Stickernya\nhehe.",
+    "ハッピー\n.",
     "Ayeee sir!→\nカンです",
 ]
 
 
-@register(outgoing=True, pattern="^.kang")
+@register(outgoing=True, pattern="^.add")
 @errors_handler
-async def kang(args):
-    """ For .kang command, kangs stickers or creates new ones. """
+async def add(args):
+    """ For .add command, adds stickers or creates new ones. """
     if not args.text[0].isalpha() and args.text[0] not in ("/", "#", "@", "!"):
         user = await bot.get_me()
         if not user.username:
@@ -311,14 +311,14 @@ async def get_pack_info(event):
 
 CMD_HELP.update({
     "stickers":
-    ".kang\
-\nUsage: Reply .kang to a sticker or an image to kang it to your userbot pack.\
-\n\n.kang [emoji('s)]\
-\nUsage: Works just like .kang but uses the emoji('s) you picked.\
-\n\n.kang [number]\
-\nUsage: Kang's the sticker/image to the specified pack but uses 🤔 as emoji.\
-\n\n.kang [emoji('s)] [number]\
-\nUsage: Kang's the sticker/image to the specified pack and uses the emoji('s) you picked.\
+    ".add\
+\nUsage: Reply .add to a sticker or an image to kang it to your userbot pack.\
+\n\n.add [emoji('s)]\
+\nUsage: Works just like .add but uses the emoji('s) you picked.\
+\n\n.add [number]\
+\nUsage: add's the sticker/image to the specified pack but uses 🤔 as emoji.\
+\n\n.add [emoji('s)] [number]\
+\nUsage: Add's the sticker/image to the specified pack and uses the emoji('s) you picked.\
 \n\n.stkrinfo\
 \nUsage: Gets info about the sticker pack."
 })
